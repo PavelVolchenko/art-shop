@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.username }}!</h1>
+    {% endif %}
+    <form action="">
+        <div class="mb-3">
+            <label class="form-label">Search for {{ searchTerm }}
+            </label>
+            <input type="text" name="searchLot" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{#    <p>Searching for {{ searchTerm }}</p>#}
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for lot in lots %}
+            <div v-for="lot in lots" class="col">
+                <div class="card">
+                    <img class="card-img-top" src="{{ lot.image.url }}" alt="image">
+                    <div class="card-body">
+                        <a href="{% url 'detail' lot.id %}">
+                            <h5 class="card-title fw-bold">{{ lot.title }}</h5>
+                        </a>
+                        <p class="card-text">{{ lot.description }}</p>
+                        {% if lot.url %}
+                            <a href="{{ lot.url }}" class="btn btn-primary">Lot Link</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+{#    <br>#}
+{#    <br>#}
+{#    <h2>Join our mailing list:</h2>#}
+{#    <form action="{% url 'signup' %}">#}
+{#        <div class="mb-3">#}
+{#            <label for="email" class="form-label">#}
+{#                Enter your email:#}
+{#                <input type="email" class="form-control" name="email">#}
+{#            </label>#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">#}
+{#            Sign Up#}
+{#        </button>#}
+{#    </form>#}
+{#</div>#}
+{#</body>#}
+{#</html>#}
