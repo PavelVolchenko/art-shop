@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% if user.is_authenticated %}
-        <h1>Welcome, {{ user.username }}!</h1>
-    {% endif %}
-    <form action="">
-        <div class="mb-3">
-            <label class="form-label">Search for {{ searchTerm }}
-            </label>
-            <input type="text" name="searchLot" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+{#    {% if user.is_authenticated %}#}
+{#        <h1>Welcome, {{ user.username }}!</h1>#}
+{#    {% endif %}#}
+{#    <form action="">#}
+{#        <div class="mb-3">#}
+{#            <label class="form-label">Search for {{ searchTerm }}#}
+{#            </label>#}
+{#            <input type="text" name="searchLot" class="form-control">#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Submit</button>#}
+{#    </form>#}
 {#    <p>Searching for {{ searchTerm }}</p>#}
     <br>
     <div class="row row-cols-1 row-cols-md-3 g-4">

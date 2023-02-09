@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from .models import Lot
@@ -22,9 +22,9 @@ def detail(request, lot_id):
     return render(request, 'detail.html', {'lot': lot})
 
 
-def signup(request):
-    email = request.GET.get('email')
-    return render(request, 'signup.html', {'email': email})
+# def signup(request):
+#     email = request.GET.get('email')
+#     return render(request, 'signup.html', {'email': email})
 
 
 def about(request):
